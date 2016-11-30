@@ -1,9 +1,10 @@
 require 'gosu'
 
+# game's main class
 class Main < Gosu::Window
   def initialize
     super 640, 480
-    self.caption = "A Game tih Gosu"
+    self.caption = 'A Game tih Gosu'
   end
 
   def update
