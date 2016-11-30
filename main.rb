@@ -1,6 +1,6 @@
-require 'gosu'
-require 'yaml'
-require 'pry'
+require "gosu"
+require "yaml"
+require "pry"
 
 # game's main class
 class Main < Gosu::Window
@@ -8,7 +8,8 @@ class Main < Gosu::Window
     @config = YAML.load_file("project_settings.yml")
     super 640, 480 # , :fullscreen => true
     self.caption = @config[:game_name]
-    @bg = Gosu::Image.new("#{@config[:images][:bg]}space_bg.png", :tileable => true)
+    @bg = Gosu::Image.new("#{@config[:images][:bg]}space_bg.png",
+                          tileable: true)
     @font = Gosu::Font.new(20)
   end
 
