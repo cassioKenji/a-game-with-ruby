@@ -1,5 +1,6 @@
 :game_name: "A Ruby Game"
 :images:
-  :bg: "media/images/bg/"
+  :bg: "assets/images/bg/"
+  :sprites: "assets/images/sprites/"
 :site:
   :title: "[Title]"
