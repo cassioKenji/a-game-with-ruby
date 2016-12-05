@@ -14,4 +14,5 @@ https://www.libgosu.org/
 brew install sdl2
 gem install bundler
 bundle install
+ruby main.rb
 ```
