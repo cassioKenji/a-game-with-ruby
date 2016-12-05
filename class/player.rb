@@ -8,16 +8,26 @@ class Player
   end
 
   def draw
-    @sprite.draw_rot(@x, @rnd_y.rand(10), 1, @angle)
+    @sprite.draw_rot(@x, @y, 1, @angle)
   end
 
-  def turn_left
+  def left
     @angle -= 5
     @x -=10
   end
 
-  def turn_right
+  def right
     @angle += 5
     @x +=10
+  end
+
+  def up
+    @angle += 5
+    @y -=10
+  end
+
+  def down
+    @angle -= 5
+    @y +=10
   end
 end

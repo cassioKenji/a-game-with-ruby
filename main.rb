@@ -17,10 +17,16 @@ class Main < Gosu::Window
 
   def update
     if Gosu::button_down? Gosu::KbLeft or Gosu::button_down? Gosu::GpLeft then
-      @player.turn_left
+      @player.left
     end
     if Gosu::button_down? Gosu::KbRight or Gosu::button_down? Gosu::GpRight then
-      @player.turn_right
+      @player.right
+    end
+    if Gosu::button_down? Gosu::KbUp or Gosu::button_down? Gosu::GpLeft then
+      @player.up
+    end
+    if Gosu::button_down? Gosu::KbDown or Gosu::button_down? Gosu::GpRight then
+      @player.down
     end
   end
 
