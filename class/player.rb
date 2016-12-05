@@ -1,8 +1,7 @@
 # the player
 class Player
-
   def initialize
-    @sprite = Gosu::Image.new("#{YAML.load_file("project_settings.yml")[:images][:sprites]}starfighter.png")
+    @sprite = Gosu::Image.new("#{YAML.load_file('project_settings.yml')[:images][:sprites]}starfighter.png")
     @x = @y = @vel_x = @vel_y = @angle = 0.0
     @rnd_y = Random.new
   end
@@ -13,21 +12,21 @@ class Player
 
   def left
     @angle -= 5
-    @x -=10
+    @x -= 10
   end
 
   def right
     @angle += 5
-    @x +=10
+    @x += 10
   end
 
   def up
     @angle += 5
-    @y -=10
+    @y -= 10
   end
 
   def down
     @angle -= 5
-    @y +=10
+    @y += 10
   end
 end
