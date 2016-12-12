@@ -1,7 +1,7 @@
 # the player
 class Player
   def initialize
-    @sprite = Gosu::Image.new("#{YAML.load_file('project_settings.yml')[:images][:sprites]}starfighter.png")
+    @sprite = Gosu::Image.new("#{ProjectSettings.instance.settings[:images][:sprites]}starfighter.png")
     @x = @y = @vel_x = @vel_y = @angle = 0.0
     @rnd_y = Random.new
   end
