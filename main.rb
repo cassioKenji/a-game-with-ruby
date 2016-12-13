@@ -2,14 +2,14 @@ require "gosu"
 require "yaml"
 require "pry"
 require_relative "class/player"
+require_relative "class/project_settings"
 
 # game's main class
 class Main < Gosu::Window
   def initialize
     super 640, 480 # , :fullscreen => true
-    @settings = YAML.load_file("project_settings.yml").freeze
-    self.caption = @settings[:game_name]
-    @bg = Gosu::Image.new("#{@settings[:images][:bg]}space_bg.png",
+    self.caption = ProjectSettings.instance.settings[:game_name]
+    @bg = Gosu::Image.new("#{ProjectSettings.instance.settings[:images][:bg]}space_bg.png",
                           tileable: true)
     @font = Gosu::Font.new(20)
     @player = Player.new
@@ -34,7 +34,7 @@ class Main < Gosu::Window
     @bg.draw(0, 0, 0)
 
     @player.draw
-    @font.draw(@settings, 10, 10, 10, 1.0, 1.0, 0xff_ffff00)
+    @font.draw(ProjectSettings.instance.settings, 10, 10, 10, 1.0, 1.0, 0xff_ffff00)
   end
 end
 
